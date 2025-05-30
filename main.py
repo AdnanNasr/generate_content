@@ -40,7 +40,7 @@ async def run(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     message: str = context.args
     response = client.models.generate_content(
         model="gemini-2.0-flash",
-        contents=message
+        contents=f"اكتب مقالة احترافية عن: {message}. اجعل المقالة ذات جودة عالية وجاهزة للنشر. اكتب المقالة فقط ولا تكتب أي شيء اخر."
     )
     with open("respones.txt", "w+") as content:
         content.write(response.text)
